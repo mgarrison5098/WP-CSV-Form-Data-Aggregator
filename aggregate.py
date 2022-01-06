@@ -33,3 +33,8 @@ def main(argv):
 
 if __name__ == "__main__":
    main(sys.argv[1:])
+
+# TO RUN:
+# Make sure python is installed; cd into directory of aggregate.py; then run:
+# python3 aggregate.py
+# This will generate a separate CSV files in the /exports directory, one for each form ID
