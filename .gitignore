@@ -1,0 +1,7 @@
+__pycache__/
+.DS_Store
+exports/*
+
+
+!exports/single_export_raw.csv
+/aggregators/__pycache__/form5.cpython-39.pyc

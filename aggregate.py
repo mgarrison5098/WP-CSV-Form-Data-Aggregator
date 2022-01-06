@@ -1,10 +1,12 @@
 import sys, getopt
 import csv
 from aggregators.form5 import form5Aggregator
+from aggregators.formShared import formSharedAggregator
+from aggregators.form1674 import form1674Aggregator
 
 
 def main(argv):
-    dataFile = './exports/single_export.csv'
+    dataFile = './exports/single_export_raw.csv'
     try:
         opts, args = getopt.getopt(argv,"hd")
     except getopt.GetoptError:
@@ -22,9 +24,11 @@ def main(argv):
         for row in csv_reader:
             if row[0] == "5":
                 form5Aggregator(row[1], row[2])
-            #else:
-                
-            #     runTest(row[1],row[3])
+            elif row[0] == "1674":
+                form1674Aggregator(row[1], row[2])
+            else:
+                if row[0].isdigit():
+                    formSharedAggregator(row[0],row[1], row[2])
     
 
 if __name__ == "__main__":
